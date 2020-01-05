@@ -1,0 +1,16 @@
+<div [ngClass]="alerta" class="alert" role="alert">
+    Samger Ramos Miranda
+</div>
+
+<!-- We change the content of variable 'alerta' -->
+<button class="btn btn-info m-1" type="button" (click)="alerta='alert-info'">Change to info</button>
+<button class="btn btn-danger" type="button" (click)="alerta='alert-danger'">Change to danger</button>
+
+<br><br>
+
+<!-- The ngClass will be applied if object's value is TRUE and will not if it doesn't -->
+<h1 [ngClass]="{'text-danger': property.danger, 'text-info': !property.danger}">Hello world</h1>
+
+<button class="btn btn-danger" type="button" (click)="property.danger = !property.danger" [ngClass]="{'btn-info': property.danger,'btn-danger': !property.danger}">
+    Change color font
+</button>
