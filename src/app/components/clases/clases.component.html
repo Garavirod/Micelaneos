@@ -14,3 +14,13 @@
 <button class="btn btn-danger" type="button" (click)="property.danger = !property.danger" [ngClass]="{'btn-info': property.danger,'btn-danger': !property.danger}">
     Change color font
 </button>
+
+<br><br>
+
+<h3>Proceo asíncrono</h3>
+
+<button class="btn btn-primary" type="button" (click)="executeProcess()" [disabled]="loading">
+    <i class="fa mr-2" [ngClass]="{'fa-save': !loading, 'fa-refresh fa-spin':loading}"></i>    
+    <Span *ngIf="loading">Save changes</Span>
+    <span *ngIf="!loading">Saving...</span>
+</button>
