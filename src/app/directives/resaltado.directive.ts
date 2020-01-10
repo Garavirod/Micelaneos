@@ -7,19 +7,27 @@ export class ResaltadoDirective {
 
   // Inyectamos en el contructor para poder utilizar
   // el elemento 'el' es todo el obj, en este caso todo el 'h3' del componente
+
   constructor(private el:ElementRef) { 
     console.log('Directive called!!!!');
-    el.nativeElement.style.backgroundColor = 'gold';
+    // el.nativeElement.style.backgroundColor = 'gold';
   }
 
-  @HostListener('mouseenter') mouseHover (){
-    this.el.nativeElement.style.backgroundColor = 'lime';
+   // Declaramos una varibale que viene desde afuera
+  @Input('appResaltado') nuevocolor: string;
+
+  @HostListener('mouseenter') mouseHover() {
+    this.resaltar(this.nuevocolor || 'pink');
+    // this.el.nativeElement.style.backgroundColor = 'lime';
   }
 
-  @HostListener('mouseleave') mouseHoverOut (){
-    this.el.nativeElement.style.backgroundColor = 'gold';
+  @HostListener('mouseleave') mouseHoverOut() {
+    // this.el.nativeElement.style.backgroundColor = 'gold';
+    this.resaltar( null );
   }
 
-  // Declaramos una varibale que viene desde afuera
-  @Input('appResultado') nuevocolor: string;
+  private resaltar(color: string) {
+    this.el.nativeElement.style.backgroundColor = color;
+
+  }
 }
