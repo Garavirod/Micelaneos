@@ -13,6 +13,10 @@ import { ResaltadoDirective } from './directives/resaltado.directive';
 import { NgSwitchComponent } from './components/ng-switch/ng-switch.component';
 import { HomeComponent } from './components/home/home.component';
 import { UsuarioDetalleComponent } from './components/usuario/usuario-detalle.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { UsuarioNuevoComponent } from './components/usuario/usuario-nuevo.component';
+import { UsuarioComponent } from './components/usuario/usuario.component';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +27,10 @@ import { UsuarioDetalleComponent } from './components/usuario/usuario-detalle.co
     ResaltadoDirective,
     NgSwitchComponent,
     HomeComponent,
-    UsuarioDetalleComponent
+    UsuarioDetalleComponent,
+    NavbarComponent,
+    UsuarioNuevoComponent,
+    UsuarioComponent
   ],
   imports: [
     BrowserModule,
