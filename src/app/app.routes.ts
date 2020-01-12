@@ -1,9 +1,8 @@
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
-import { UsuarioEditarComponent } from './components/usuario/usuario-editar.component';
-import { UsuarioDetalleComponent } from './components/usuario/usuario-detalle.component';
-import { UsuarioNuevoComponent } from './components/usuario/usuario-nuevo.component';
+import { USUARIO_ROUTES } from './components/usuario/usuario.routes';
+
 
 
 
@@ -13,12 +12,7 @@ const APP_ROUTES: Routes = [
     {
       path: 'usuario/:id',
       component: UsuarioComponent,
-      children: [
-        { path: 'editar', component: UsuarioEditarComponent },
-        { path: 'detalle', component: UsuarioDetalleComponent },
-        { path: 'nuevo', component: UsuarioNuevoComponent },
-        { path: '**', pathMatch: 'full', redirectTo: 'nuevo' }
-      ]
+      children: USUARIO_ROUTES //Rutas segemntadas en un solo archivo exportdas como USUARIO_ROUTES
     },
     { path: '**', pathMatch: 'full', redirectTo: 'home' },
 ];
