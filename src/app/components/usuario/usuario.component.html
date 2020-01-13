@@ -1,12 +1,11 @@
 <div class="row">
     <div class="col-md-12 text-center">
         <div class="btn-group" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-secondary" [routerLink]="['nuevo']" routerLinkActive="active">New</button>
+            <button type="button" class="btn btn-secondary" [routerLink]="['nuevo','otra cosa']" routerLinkActive="active">New</button>
             <button type="button" class="btn btn-secondary" [routerLink]="['editar']" routerLinkActive="active">Edit</button>
             <button type="button" class="btn btn-secondary" [routerLink]="['detalle']" routerLinkActive="active">Detail</button>
         </div>
     </div>
 </div>
-
 <!-- Aqui renderizamos las rutas hijas, o loc componentes -->
 <router-outlet></router-outlet>
